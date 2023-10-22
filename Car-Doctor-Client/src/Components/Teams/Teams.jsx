@@ -16,7 +16,7 @@ const Teams = () => {
                 <div className='border space-y-2 rounded-lg border-gray-200 p-4 flex flex-col justify-center items-center'>
                     <img className='w-full h-[270px]' src={team1} alt="" />
                     <h4 className='text-xl font-bold text-[#444]'>Car Engine Plug</h4>
-                    <h5 className='text-lg font-bold text-[#737373]'>Engine Exper</h5>
+                    <h5 className='text-lg font-bold text-[#737373]'>Engine expert</h5>
                     <div className='flex justify-center items-center gap-3'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <circle cx="19.834" cy="19.834" r="19.834" fill="#395185" />
@@ -38,7 +38,7 @@ const Teams = () => {
                 <div className='border space-y-2 rounded-lg border-gray-200 p-4 flex flex-col justify-center items-center'>
                     <img className='w-full h-[270px]' src={team2} alt="" />
                     <h4 className='text-xl font-bold text-[#444]'>Car Engine Plug</h4>
-                    <h5 className='text-lg font-bold text-[#737373]'>Engine Exper</h5>
+                    <h5 className='text-lg font-bold text-[#737373]'>Engine expert</h5>
                     <div className='flex justify-center items-center gap-3'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <circle cx="19.834" cy="19.834" r="19.834" fill="#395185" />
@@ -61,7 +61,7 @@ const Teams = () => {
                 <div className='border space-y-2 rounded-lg border-gray-200 p-4 flex flex-col justify-center items-center'>
                     <img className='w-full h-[270px]' src={team3} alt="" />
                     <h4 className='text-xl font-bold text-[#444]'>Car Engine Plug</h4>
-                    <h5 className='text-lg font-bold text-[#737373]'>Engine Exper</h5>
+                    <h5 className='text-lg font-bold text-[#737373]'>Engine expert</h5>
                     <div className='flex justify-center items-center gap-3'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <circle cx="19.834" cy="19.834" r="19.834" fill="#395185" />
