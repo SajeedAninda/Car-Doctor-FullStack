@@ -1,0 +1,46 @@
+.banner1 {
+    background-image: url("../../assets/images/banner/1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner2 {
+    background-image: url("../../assets/images/banner/2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner3 {
+    background-image: url("../../assets/images/banner/3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner4 {
+    background-image: url("../../assets/images/banner/4.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner5 {
+    background-image: url("../../assets/images/banner/5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner6 {
+    background-image: url("../../assets/images/banner/6.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+    border-radius:8px;
+}

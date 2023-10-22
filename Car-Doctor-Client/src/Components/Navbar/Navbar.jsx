@@ -61,7 +61,7 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                <div className='flex justify-center gap-4 items-center flex-1'>
+                <div className='flex justify-end gap-4 items-center flex-1'>
                     <div>
                         <AiOutlineShopping className='text-2xl text-[#444]'></AiOutlineShopping>
                     </div>
