@@ -16,7 +16,7 @@ const Navbar = () => {
                     <NavLink
                         to={"/"}
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending px-3 py-2" : isActive ? "border-2 border-[#FF3811] px-3 py-2 rounded-md" : ""
+                            isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
                         Home
@@ -25,7 +25,7 @@ const Navbar = () => {
                     <NavLink
                         to={"/about"}
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending px-3 py-2" : isActive ? "border-2 border-[#FF3811] px-3 py-2 rounded-md" : ""
+                            isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
                         About
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <NavLink
                         to={"/services"}
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending px-3 py-2" : isActive ? "border-2 border-[#FF3811] px-3 py-2 rounded-md" : ""
+                            isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
                         Services
@@ -45,7 +45,7 @@ const Navbar = () => {
                     <NavLink
                         to={"/blogs"}
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending px-3 py-2" : isActive ? "border-2 border-[#FF3811] px-3 py-2 rounded-md" : ""
+                            isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
                         Blogs
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <NavLink
                         to={"/contact"}
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending px-3 py-2" : isActive ? "border-2 border-[#FF3811] px-3 py-2 rounded-md" : ""
+                            isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
                         Contact
@@ -69,7 +69,7 @@ const Navbar = () => {
                         <AiOutlineSearch className='text-xl text-[#444]'></AiOutlineSearch>
                     </div>
                     <div>
-                       <button className='px-4 font-semibold py-2 border-2 rounded-md border-[#FF3811] hover:bg-[#FF3811] hover:text-white hover:border-2 hover:border-[#FF3811]'> Appointment</button>
+                        <button className='px-4 font-semibold py-2 border-2 rounded-md border-[#FF3811] hover:bg-[#FF3811] hover:text-white hover:border-2 hover:border-[#FF3811]'> Appointment</button>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import about1 from "../../assets/images/about_us/person.jpg";
 import about2 from "../../assets/images/about_us/parts.jpg";
 
+
 const About = () => {
     return (
         <div className='h-fit py-16'>
@@ -18,7 +19,7 @@ const About = () => {
                     </h1>
                     <p className='text-sm text-[#737373]'>There are many variations of passages of Lorem Ipsum available, <br /> but the majority have suffered alteration in some form, by injected humour,  or randomised words which <br /> don't look even slightly believable. </p>
                     <p className='text-sm text-[#737373]'>The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                    <button className='px-4 font-semibold bg-[#FF3811] py-2 border-2 rounded-md border-[#FF3811] hover:bg-transparent text-white hover:text-white hover:border-2 hover:border-white'>Get more Info</button>
+                    <button className='px-4 font-semibold bg-[#FF3811] py-2 border-2 rounded-md border-[#FF3811] hover:bg-transparent text-white hover:text-[#FF3811]  hover:border-2 hover:border-[#FF3811] '>Get more Info</button>
                 </div>
             </div>
         </div>
