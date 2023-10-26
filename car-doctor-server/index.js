@@ -31,6 +31,7 @@ async function run() {
 
         // API ENDPOINTS 
         const serviceCollection = client.db("CarDoctorDB").collection("services");
+        const checkOutCollection = client.db("CarDoctorDB").collection("checkout");
 
         app.get("/services", async (req, res) => {
             const result = await serviceCollection.find().toArray();
@@ -45,6 +46,12 @@ async function run() {
             console.log(result);
             res.send(result);
         });
+        app.post("/checkout", async (req, res) => {
+            const user = req.body;
+            const result = await checkOutCollection.insertOne(user);
+            console.log(result);
+            res.send(result);
+          });
 
 
 
