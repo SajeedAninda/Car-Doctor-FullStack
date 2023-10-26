@@ -3,12 +3,13 @@ import loginImg from "../../../assets/images/login/login.svg";
 import fb from "../../../assets/images/login/fb.svg";
 import google from "../../../assets/images/login/ggl.svg";
 import linkedin from "../../../assets/images/login/lnkdn.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     let { login, googleLogin } = useContext(AuthContext);
+    let navigate = useNavigate();
     let handleLogin = (e) => {
         e.preventDefault();
         let email = e.target.email.value;
@@ -46,6 +47,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
+                navigate("/")
             }).catch((error) => {
                 console.log(error)
             });
