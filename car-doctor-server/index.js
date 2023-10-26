@@ -51,7 +51,20 @@ async function run() {
             const result = await checkOutCollection.insertOne(user);
             console.log(result);
             res.send(result);
-          });
+        });
+        app.get("/checkout", async (req, res) => {
+            const result = await checkOutCollection.find().toArray();
+            res.send(result);
+        });
+        app.get("/checkout/:email", async (req, res) => {
+            const email = req.params.email;
+            const query = {
+                email: email,
+            };
+            const result = await checkOutCollection.find(query).toArray();
+            console.log(result);
+            res.send(result);
+        });
 
 
 
