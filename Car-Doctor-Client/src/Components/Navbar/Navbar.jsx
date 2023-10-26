@@ -54,12 +54,12 @@ const Navbar = () => {
 
 
                     <NavLink
-                        to={"/blogs"}
+                        to={"/inventory"}
                         className={({ isActive, isPending }) =>
                             isPending ? "pending px-3 py-2 hover:text-[#FF3811]" : isActive ? "border-2 hover:text-[#FF3811] border-[#FF3811] px-3 py-2 rounded-md" : "hover:text-[#FF3811]"
                         }
                     >
-                        Blogs
+                        Inventory
                     </NavLink>
 
                     <NavLink

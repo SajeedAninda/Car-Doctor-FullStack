@@ -12,6 +12,7 @@ import Register from './Components/Authentication/Register/Register.jsx';
 import AuthProvider from './Components/Authentication/AuthProvider.jsx';
 import Checkout from './Components/Checkout/Checkout.jsx';
 import PrivateRoute from './Components/Authentication/PrivateRoute/PrivateRoute.jsx';
+import Inventory from './Components/Inventory/Inventory.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "/checkout/:id",
         element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+      },
+      {
+        path: "/inventory",
+        element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
       },
     ],
   },
