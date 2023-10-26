@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "../../assets/logo.svg"
 import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 
 const Navbar = () => {
+    let { signedInUser, logOut } = useContext(AuthContext);
+
+    let handleLogout = () => {
+        logOut()
+            .then(() => {
+                console.log("Log Out Succesfull");
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
     return (
         <div className='w-[90%] mx-auto'>
             <div className='h-[15vh]  flex justify-between items-center'>
@@ -69,7 +80,12 @@ const Navbar = () => {
                         <AiOutlineSearch className='text-xl text-[#444]'></AiOutlineSearch>
                     </div>
                     <div>
-                        <button className='px-4 font-semibold py-2 border-2 rounded-md border-[#FF3811] hover:bg-[#FF3811] hover:text-white hover:border-2 hover:border-[#FF3811]'> Appointment</button>
+                        {
+                            signedInUser ?
+                                <button onClick={handleLogout} className='px-4 font-semibold py-2 border-2 rounded-md border-[#FF3811] hover:bg-[#FF3811] hover:text-white hover:border-2 hover:border-[#FF3811]'>Logout</button>
+                                :
+                                <Link to={`/login`}> <button className='px-4 font-semibold py-2 border-2 rounded-md border-[#FF3811] hover:bg-[#FF3811] hover:text-white hover:border-2 hover:border-[#FF3811]'>Login</button></Link>
+                        }
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import Homepage from './Components/Homepage/Homepage.jsx';
 import Login from './Components/Authentication/Login/Login.jsx';
 import Register from './Components/Authentication/Register/Register.jsx';
 import AuthProvider from './Components/Authentication/AuthProvider.jsx';
+import Checkout from './Components/Checkout/Checkout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/checkout/:id",
+        element: <Checkout></Checkout>,
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
       },
     ],
   },
