@@ -3,12 +3,13 @@ import loginImg from "../../../assets/images/login/login.svg";
 import fb from "../../../assets/images/login/fb.svg";
 import google from "../../../assets/images/login/ggl.svg";
 import linkedin from "../../../assets/images/login/lnkdn.svg";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     let { login, googleLogin } = useContext(AuthContext);
+    let location = useLocation();
     let navigate = useNavigate();
     let handleLogin = (e) => {
         e.preventDefault();
@@ -23,6 +24,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -47,7 +49,7 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                navigate("/")
+                navigate(location?.state ? location.state : '/');
             }).catch((error) => {
                 console.log(error)
             });
