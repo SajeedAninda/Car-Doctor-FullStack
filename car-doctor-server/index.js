@@ -15,6 +15,21 @@ app.use(express.json());
 // PORT 
 const port = process.env.PORT || 5000;
 
+// VERIFY JWT TOKEN 
+const verifyToken = async (req, res, next) => {
+    const token = req.cookies?.token;
+    if (!token) {
+        return res.status(401).send({ message: 'Not Authorized' })
+    }
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+        if (err) {
+            return res.status(401).send({ message: 'Not Authorized' })
+        }
+        req.user = decoded;
+        next();
+    })
+}
+
 // MONGODB 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ruhvmdy.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -74,7 +89,7 @@ async function run() {
             console.log(result);
             res.send(result);
         });
-        app.get("/checkout", async (req, res) => {
+        app.get("/checkout", verifyToken, async (req, res) => {
             const result = await checkOutCollection.find().toArray();
             res.send(result);
         });
