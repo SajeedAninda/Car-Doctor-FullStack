@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
+import axios from 'axios';
 
 const Inventory = () => {
     let [bookedData, setBookedData] = useState([]);
@@ -7,10 +8,10 @@ const Inventory = () => {
     let emailAddress = signedInUser?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/checkout/${emailAddress}`)
-            .then(res => res.json())
-            .then(data => setBookedData(data))
+        axios.get(`http://localhost:5000/checkout/${emailAddress}`, { withCredentials: true })
+            .then(res => setBookedData(res.data))
     }, [])
+
     let handleDelete = (id) => {
         let confirmed = window.confirm("Do You Want to Delete?");
 

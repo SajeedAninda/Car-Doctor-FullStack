@@ -6,6 +6,7 @@ import linkedin from "../../../assets/images/login/lnkdn.svg";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const Login = () => {
     let { login, googleLogin } = useContext(AuthContext);
@@ -24,11 +25,15 @@ const Login = () => {
                     'Login Successful!',
                     'success'
                 )
-                navigate(location?.state ? location.state : '/');
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                    })
+                // navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 const errorCode = error.code;
-                console.log(errorCode);
+                console.log(error);
                 if (errorCode === "auth/invalid-login-credentials") {
                     return Swal.fire({
                         icon: 'error',

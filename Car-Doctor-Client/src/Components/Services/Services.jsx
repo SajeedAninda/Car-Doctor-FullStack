@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -5,11 +6,16 @@ import { Link } from 'react-router-dom';
 const Services = () => {
     const [services, setServices] = useState([]);
 
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/services")
+    //         .then((res) => res.json())
+    //         .then((data) => setServices(data));
+    // }, []);
+
     useEffect(() => {
-        fetch("http://localhost:5000/services")
-            .then((res) => res.json())
-            .then((data) => setServices(data));
-    }, []);
+        axios.get("http://localhost:5000/services", { withCredentials: true })
+            .then(res => setServices(res.data));
+    }, [])
 
     return (
         <div className='w-[90%] mx-auto py-16'>
@@ -25,8 +31,8 @@ const Services = () => {
                         <img className='h-[200px] w-full rounded-lg' src={service.img} alt={service.title} />
                         <h4 className='text-xl font-bold text-[#444]'>{service.title}</h4>
                         <div className='flex justify-between'>
-                        <p className='text-[#FF3811] font-bold'>Price: ${service.price}</p>
-                        <Link to={`/checkout/${service._id}`} className='text-[#FF3811] font-bold hover:text-[#ff3911b0]'>Book Now</Link>
+                            <p className='text-[#FF3811] font-bold'>Price: ${service.price}</p>
+                            <Link to={`/checkout/${service._id}`} className='text-[#FF3811] font-bold hover:text-[#ff3911b0]'>Book Now</Link>
                         </div>
                     </div>
                 ))}
