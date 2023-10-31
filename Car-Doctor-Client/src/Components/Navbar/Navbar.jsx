@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { AuthContext } from '../Authentication/AuthProvider';
+import axios from 'axios';
 
 
 const Navbar = () => {
@@ -12,7 +13,9 @@ const Navbar = () => {
     let handleLogout = () => {
         logOut()
             .then(() => {
-                console.log("Log Out Succesfull");
+                console.log("Log Out Successfull");
+                axios.post("http://localhost:5000/logout", signedInUser.email, { withCredentials: true })
+                    .res(console.log(res.data));
             }).catch((error) => {
                 console.log(error);
             });
